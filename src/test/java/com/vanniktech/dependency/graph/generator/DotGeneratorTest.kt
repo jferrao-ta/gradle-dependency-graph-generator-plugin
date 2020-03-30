@@ -104,7 +104,7 @@ class DotGeneratorTest {
   @Test fun singleProjectEmptyAllHeader() {
     assertThat(DotGenerator(singleEmpty, ALL.copy(label = Label.of("my custom header").locate(TOP).justify(LEFT))).generateGraph()).hasToString("""
         digraph "G" {
-        graph ["labeljust"="l","labelloc"="t","label"="my custom header"]
+        graph ["labeljust"="l","label"="my custom header","labelloc"="t"]
         node ["fontname"="Times New Roman"]
         "singleempty" ["shape"="rectangle","label"="singleempty"]
         }
@@ -115,7 +115,7 @@ class DotGeneratorTest {
     assertThat(DotGenerator(singleEmpty, ALL.copy(projectNode = { node, _ -> node.add(Shape.EGG, Style.DOTTED, Color.rgb("ff0099")) })).generateGraph()).hasToString("""
         digraph "G" {
         node ["fontname"="Times New Roman"]
-        "singleempty" ["shape"="egg","color"="#ff0099","style"="dotted","label"="singleempty"]
+        "singleempty" ["style"="dotted","label"="singleempty","shape"="egg","color"="#ff0099"]
         }
         """.trimIndent())
   }
@@ -149,10 +149,10 @@ class DotGeneratorTest {
         digraph "G" {
         node ["fontname"="Times New Roman"]
         "single" ["shape"="rectangle","label"="single"]
-        "orgjetbrainskotlinkotlinstdlib" ["shape"="rectangle","color"="0.8149083111495659 0.9664648423189337 0.6770540178553557","style"="filled","label"="kotlin-stdlib"]
-        "orgjetbrainsannotations" ["shape"="rectangle","color"="0.5621564584057837 0.5884903495122131 0.43552887262003903","style"="filled","label"="jetbrains-annotations"]
-        "ioreactivexrxjava2rxjava" ["shape"="rectangle","color"="0.6348837980117762 0.1147920430188718 0.6348666505352103","style"="filled","label"="rxjava"]
-        "orgreactivestreamsreactivestreams" ["shape"="rectangle","color"="0.5638607761596124 0.291358287694075 0.44680371407973496","style"="filled","label"="reactive-streams"]
+        "orgjetbrainskotlinkotlinstdlib" ["style"="filled","label"="kotlin-stdlib","shape"="rectangle","color"="0.8149083111495659 0.9664648423189337 0.6770540178553557"]
+        "orgjetbrainsannotations" ["style"="filled","label"="jetbrains-annotations","shape"="rectangle","color"="0.5621564584057837 0.5884903495122131 0.43552887262003903"]
+        "ioreactivexrxjava2rxjava" ["style"="filled","label"="rxjava","shape"="rectangle","color"="0.6348837980117762 0.1147920430188718 0.6348666505352103"]
+        "orgreactivestreamsreactivestreams" ["style"="filled","label"="reactive-streams","shape"="rectangle","color"="0.5638607761596124 0.291358287694075 0.44680371407973496"]
         "single" -> "orgjetbrainskotlinkotlinstdlib"
         "single" -> "ioreactivexrxjava2rxjava"
         "orgjetbrainskotlinkotlinstdlib" -> "orgjetbrainsannotations"
