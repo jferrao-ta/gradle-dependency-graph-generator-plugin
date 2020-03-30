@@ -149,10 +149,10 @@ class DotGeneratorTest {
         digraph "G" {
         node ["fontname"="Times New Roman"]
         "single" ["shape"="rectangle","label"="single"]
-        "orgjetbrainskotlinkotlinstdlib" ["shape"="rectangle","color"="0.5729030306231915 0.730480096472168 0.6199754367027828","style"="filled","label"="kotlin-stdlib"]
-        "orgjetbrainsannotations" ["shape"="rectangle","color"="0.4288231821397507 0.6911813426492972 0.6290787664264184","style"="filled","label"="jetbrains-annotations"]
-        "ioreactivexrxjava2rxjava" ["shape"="rectangle","color"="0.16317995652814232 0.937505295349677 0.3856775265969894","style"="filled","label"="rxjava"]
-        "orgreactivestreamsreactivestreams" ["shape"="rectangle","color"="0.7630981414446663 0.06104724686147023 0.3765458063358519","style"="filled","label"="reactive-streams"]
+        "orgjetbrainskotlinkotlinstdlib" ["shape"="rectangle","color"="0.8149083111495659 0.9664648423189337 0.6770540178553557","style"="filled","label"="kotlin-stdlib"]
+        "orgjetbrainsannotations" ["shape"="rectangle","color"="0.5621564584057837 0.5884903495122131 0.43552887262003903","style"="filled","label"="jetbrains-annotations"]
+        "ioreactivexrxjava2rxjava" ["shape"="rectangle","color"="0.6348837980117762 0.1147920430188718 0.6348666505352103","style"="filled","label"="rxjava"]
+        "orgreactivestreamsreactivestreams" ["shape"="rectangle","color"="0.5638607761596124 0.291358287694075 0.44680371407973496","style"="filled","label"="reactive-streams"]
         "single" -> "orgjetbrainskotlinkotlinstdlib"
         "single" -> "ioreactivexrxjava2rxjava"
         "orgjetbrainskotlinkotlinstdlib" -> "orgjetbrainsannotations"
