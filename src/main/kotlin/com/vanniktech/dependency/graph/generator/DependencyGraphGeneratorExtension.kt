@@ -46,7 +46,9 @@ open class DependencyGraphGeneratorExtension {
     /** Return true when you want to include this project, false otherwise. */
     val includeProject: (Project) -> Boolean = { true },
     /** Return the output formats you'd like to be generated. */
-    val outputFormats: List<Format> = listOf(PNG, SVG)
+    val outputFormats: List<Format> = listOf(PNG, SVG),
+    /** totalMemory used by Graphviz. */
+    val totalMemory: Int = 134217728 // 128MB
   ) {
     /** Gradle task name that is associated with this generator. */
     val gradleTaskName = "generateDependencyGraph${name.capitalize()}"

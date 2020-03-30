@@ -18,7 +18,9 @@ open class DependencyGraphGeneratorTask : DefaultTask() {
     val graph = DotGenerator(project, generator).generateGraph()
     File(outputDirectory, generator.outputFileNameDot).writeText(graph.toString())
 
-    val graphviz = Graphviz.fromGraph(graph)
+    val graphviz = Graphviz
+      .fromGraph(graph)
+      .totalMemory(generator.totalMemory)
 
     generator.outputFormats.forEach {
       graphviz.render(it).toFile(File(outputDirectory, generator.outputFileName))
